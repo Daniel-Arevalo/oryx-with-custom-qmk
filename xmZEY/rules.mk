@@ -9,3 +9,4 @@ SPACE_CADET_ENABLE = no
 COMBO_ENABLE = yes
 DYNAMIC_TAPPING_TERM_ENABLE = yes
 LAYER_LOCK_ENABLE = yes
+SRC += features/achordion.c
