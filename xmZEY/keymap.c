@@ -9,6 +9,31 @@ void housekeeping_task_user(void) {
   achordion_task();
 }
 
+bool achordion_chord(uint16_t tap_hold_keycode,
+                     keyrecord_t* tap_hold_record,
+                     uint16_t other_keycode,
+                     keyrecord_t* other_record) {
+  // Exceptionally consider the following chords as holds, even though they
+  // are on the same hand in Dvorak.
+  switch (tap_hold_keycode) {
+    case KC_S:  // A + U.
+      if (other_keycode == KC_W) { return true; }
+      if (other_keycode == KC_A) { return true; }
+      if (other_keycode == KC_T) { return true; }
+      if (other_keycode == KC_X) { return true; }
+      if (other_keycode == KC_C) { return true; }
+      if (other_keycode == KC_V) { return true; }
+      break;
+  }
+
+  // Also allow same-hand holds when the other key is in the rows below the
+  // alphas. I need the `% (MATRIX_ROWS / 2)` because my keyboard is split.
+  if (other_record->event.key.row % (MATRIX_ROWS / 2) >= 4) { return true; }
+
+  // Otherwise, follow the opposite hands rule.
+  return achordion_opposite_hands(tap_hold_record, other_record);
+}
+
 enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
   ST_MACRO_0,
