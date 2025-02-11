@@ -16,9 +16,8 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   
   switch (tap_hold_keycode) {
     case MT(MOD_LCTL, KC_S): 
-      if (other_keycode == KC_W) { return true; }
-      if (other_keycode == KC_A) { return true; }
-      if (other_keycode == KC_T) { return true; }
+      if (other_keycode == MT(MOD_LGUI, KC_A)) { return true; }
+      if (other_keycode == MT(MOD_LSFT, KC_T)) { return true; }
       if (other_keycode == KC_X) { return true; }
       if (other_keycode == KC_C) { return true; }
       if (other_keycode == KC_V) { return true; }
@@ -37,10 +36,10 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
   switch (tap_hold_keycode) {
     case LT(2,KC_TAB):
     case LT(3,KC_ENTER):
-    case LT(4,KC_V):
-    case 5:
-    case 6:
-    case 7:
+    case LT(4,KC_D):
+    case LT(5,KC_BSPC):
+    case LT(6,KC_SPACE):
+    case LT(7,KC_H):
       return 0;  // Bypass Achordion for these keys.
   }
 
