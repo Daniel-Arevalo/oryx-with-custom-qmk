@@ -13,10 +13,9 @@ bool achordion_chord(uint16_t tap_hold_keycode,
                      keyrecord_t* tap_hold_record,
                      uint16_t other_keycode,
                      keyrecord_t* other_record) {
-  // Exceptionally consider the following chords as holds, even though they
-  // are on the same hand in Dvorak.
+  
   switch (tap_hold_keycode) {
-    case KC_S:  // A + U.
+    case MT(MOD_LCTL, KC_S): 
       if (other_keycode == KC_W) { return true; }
       if (other_keycode == KC_A) { return true; }
       if (other_keycode == KC_T) { return true; }
@@ -32,6 +31,20 @@ bool achordion_chord(uint16_t tap_hold_keycode,
 
   // Otherwise, follow the opposite hands rule.
   return achordion_opposite_hands(tap_hold_record, other_record);
+}
+
+uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
+  switch (tap_hold_keycode) {
+    case LT(2,KC_TAB):
+    case LT(3,KC_ENTER):
+    case LT(4,KC_V):
+    case 5:
+    case 6:
+    case 7:
+      return 0;  // Bypass Achordion for these keys.
+  }
+
+  return 700;  // Otherwise use a timeout of 800 ms.
 }
 
 enum custom_keycodes {
