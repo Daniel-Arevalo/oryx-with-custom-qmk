@@ -124,10 +124,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_SPACE,       KC_RABK,                                        KC_BSPC,        KC_TRANSPARENT
   ),
   [7] = LAYOUT_voyager(
-    KC_NO,          ST_MACRO_3,     ST_MACRO_4,     ST_MACRO_5,     ST_MACRO_6,     ST_MACRO_7,                                     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          QK_BOOT,        
+    KC_NO,          ST_MACRO_3,     ST_MACRO_4,     ST_MACRO_5,     ST_MACRO_6,     ST_MACRO_7,                                     RM_PREV,          RM_NEXT,          RM_HUED,          RM_HUEU,          KC_NO,          QK_BOOT,        
     QK_DYNAMIC_TAPPING_TERM_UP,KC_NO,          KC_AUDIO_MUTE,  KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,RGB_TOG,                                        QK_LLCK,        RGB_HUI,        RGB_HUD,        RGB_SAI,        RGB_SAD,        KC_NO,          
-    QK_DYNAMIC_TAPPING_TERM_PRINT,KC_MEDIA_PREV_TRACK,KC_MEDIA_STOP,  KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,RGB_MODE_FORWARD,                                KC_NO,          KC_RIGHT_SHIFT, KC_RIGHT_CTRL,  KC_RIGHT_ALT,   KC_RIGHT_GUI,   KC_NO,          
-    QK_DYNAMIC_TAPPING_TERM_DOWN,TO(0),          TO(1),          KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP,KC_TRANSPARENT,                                 KC_NO,          KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          
+    QK_DYNAMIC_TAPPING_TERM_PRINT,KC_MEDIA_PREV_TRACK,KC_MEDIA_STOP,  KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,RGB_MODE_FORWARD,                                RM_SPDU,          KC_RIGHT_SHIFT, KC_RIGHT_CTRL,  KC_RIGHT_ALT,   KC_RIGHT_GUI,   KC_NO,          
+    QK_DYNAMIC_TAPPING_TERM_DOWN,TO(0),          TO(1),          KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP,KC_TRANSPARENT,                                 RM_SPDD,          KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          
                                                     KC_NO,          KC_NO,                                          KC_NO,          KC_NO
   ),
   [8] = LAYOUT_voyager(
