@@ -36,6 +36,7 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
     case LT(2,KC_TAB):
     case LT(3,KC_SPACE):
     case LT(4,KC_BSPC):
+    case LT(5,KC_SPACE):
       return 0;  // Bypass Achordion for these keys.
   }
 
