@@ -213,12 +213,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case ST_MACRO_0:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_Y) SS_DELAY(100) SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_U));
+      SEND_STRING("you");
     }
     break;
     case ST_MACRO_1:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_Q) SS_DELAY(100) SS_TAP(X_U) SS_DELAY(100) SS_TAP(X_E) SS_DELAY(100) SS_TAP(X_U) SS_DELAY(100) SS_TAP(X_E));
+      SEND_STRING("queue");
     }
     break;
     case ST_MACRO_2:
@@ -228,17 +228,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_3:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_I));
+      SEND_STRING("IN ('')";
+      tap_code(KC_LEFT);
+      tap_code(KC_LEFT);
     }
     break;
     case ST_MACRO_4:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_L));
+      SEND_STRING("LIKE '%%'");
+      tap_code(KC_LEFT);
+      tap_code(KC_LEFT);
     }
     break;
     case ST_MACRO_5:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_DOT) SS_DELAY(100) SS_TAP(X_DOT) SS_DELAY(100) SS_TAP(X_SLASH));
+      SEND_STRING("../");
     }
     break;
     case ST_MACRO_6:
