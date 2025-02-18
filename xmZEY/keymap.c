@@ -53,6 +53,9 @@ enum custom_keycodes {
   ST_MACRO_5,
   ST_MACRO_6,
   ST_MACRO_7,
+  ST_MACRO_8,
+  ST_MACRO_9,
+  ST_MACRO_10,
 };
 
 
@@ -102,13 +105,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [4] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          QK_LLCK,                                        KC_NO,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_NO,          
+    KC_NO,          KC_NO,          KC_NO,          ST_MACRO_3,     ST_MACRO_4,     QK_LLCK,                                        KC_NO,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_NO,          
     KC_NO,          KC_LEFT_GUI,    KC_LEFT_ALT,    KC_LEFT_CTRL,   KC_LEFT_SHIFT,  KC_NO,                                          KC_NO,          KC_F4,          KC_F5,          KC_F6,          KC_F11,         KC_NO,          
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_INSERT,      KC_F1,          KC_F2,          KC_F3,          KC_F12,         KC_NO,          
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          ST_MACRO_5,     KC_NO,                                          KC_INSERT,      KC_F1,          KC_F2,          KC_F3,          KC_F12,         KC_NO,          
                                                     KC_NO,          KC_NO,                                          KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [5] = LAYOUT_voyager(
-    KC_NO,          ST_MACRO_3,     ST_MACRO_4,     ST_MACRO_5,     ST_MACRO_6,     ST_MACRO_7,                                     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          QK_BOOT,        
+    KC_NO,          ST_MACRO_6,     ST_MACRO_7,     ST_MACRO_8,     ST_MACRO_9,     ST_MACRO_10,                                    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          QK_BOOT,        
     QK_DYNAMIC_TAPPING_TERM_UP,KC_NO,          KC_AUDIO_MUTE,  KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,RGB_TOG,                                        QK_LLCK,        RGB_HUI,        RGB_HUD,        RGB_SAI,        RGB_SAD,        KC_NO,          
     QK_DYNAMIC_TAPPING_TERM_PRINT,KC_MEDIA_PREV_TRACK,KC_MEDIA_STOP,  KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,RGB_MODE_FORWARD,                                KC_NO,          KC_RIGHT_SHIFT, KC_RIGHT_CTRL,  KC_RIGHT_ALT,   KC_RIGHT_GUI,   KC_NO,          
     QK_DYNAMIC_TAPPING_TERM_DOWN,KC_NO,          KC_NO,          KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP,KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
@@ -225,25 +228,40 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_3:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_3));
+      SEND_STRING(SS_TAP(X_I));
     }
     break;
     case ST_MACRO_4:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_4));
+      SEND_STRING(SS_TAP(X_L));
     }
     break;
     case ST_MACRO_5:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_1));
+      SEND_STRING(SS_TAP(X_DOT) SS_DELAY(100) SS_TAP(X_DOT) SS_DELAY(100) SS_TAP(X_SLASH));
     }
     break;
     case ST_MACRO_6:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_2));
+      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_3));
     }
     break;
     case ST_MACRO_7:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_4));
+    }
+    break;
+    case ST_MACRO_8:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_1));
+    }
+    break;
+    case ST_MACRO_9:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_2));
+    }
+    break;
+    case ST_MACRO_10:
     if (record->event.pressed) {
       SEND_STRING(SS_TAP(X_RIGHT_ALT) SS_DELAY(100) SS_TAP(X_RIGHT_ALT));
     }
