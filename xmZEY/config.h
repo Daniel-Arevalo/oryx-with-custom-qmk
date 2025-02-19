@@ -3,6 +3,9 @@
   See config.h options at https://docs.qmk.fm/#/config_options?id=the-configh-file
 */
 
+// Apply custom shift keys only on layer 6.
+#define CUSTOM_SHIFT_KEYS_LAYER_MASK (1 << 6)
+
 #undef TAPPING_TERM
 #define TAPPING_TERM 175
 

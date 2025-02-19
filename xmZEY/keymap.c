@@ -5,8 +5,6 @@
 #include "features/custom_shift_keys.h"
 #define MOON_LED_LEVEL LED_LEVEL
 #define ML_SAFE_RANGE SAFE_RANGE
-// Apply custom shift keys only on layer 6.
-#define CUSTOM_SHIFT_KEYS_LAYER_MASK (1 << 6)
 
 const custom_shift_key_t custom_shift_keys[] = {
   {KC_1 , KC_F1},
