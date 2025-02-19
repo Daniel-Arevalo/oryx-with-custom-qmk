@@ -254,7 +254,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case LIKE_STMT:
     if (record->event.pressed) {
-      SEND_STRING("LIKE '%%'" SS_DELAY(50) rSS_TAP(X_LEFT) SS_DELAY(50) SS_TAP(X_LEFT));
+      SEND_STRING("LIKE '%%'" SS_DELAY(50) SS_TAP(X_LEFT) SS_DELAY(50) SS_TAP(X_LEFT));
     }
     break;
 
