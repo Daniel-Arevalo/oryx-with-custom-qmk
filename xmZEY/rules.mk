@@ -8,3 +8,5 @@ CAPS_WORD_ENABLE = yes
 COMBO_ENABLE = yes
 DYNAMIC_TAPPING_TERM_ENABLE = yes
 LAYER_LOCK_ENABLE = yes
+SRC += features/custom_shift_keys.c
+SRC += features/socd_cleaner.c
