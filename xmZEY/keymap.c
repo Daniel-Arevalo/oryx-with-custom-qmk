@@ -14,9 +14,9 @@ enum custom_keycodes {
   ST_MACRO_5,
   ST_MACRO_6,
   ST_MACRO_7,
+  IN_STMT,
+  LIKE_STMT,
 };
-
-
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [5] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          QK_LLCK,                                        KC_NO,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_NO,          
+    KC_NO,          KC_NO,          KC_NO,          IN_STMT,          LIKE_STMT,          QK_LLCK,                                        KC_NO,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_NO,          
     KC_NO,          KC_NO,          KC_LEFT_ALT,    KC_LEFT_CTRL,   KC_LEFT_SHIFT,  KC_NO,                                          KC_NO,          KC_F4,          KC_F5,          KC_F6,          KC_F11,         KC_NO,          
     KC_NO,          KC_LEFT_GUI,    KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_INSERT,      KC_F1,          KC_F2,          KC_F3,          KC_F12,         KC_NO,          
                                                     KC_TRANSPARENT, KC_NO,                                          KC_NO,          KC_TRANSPARENT
@@ -192,6 +192,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case ST_MACRO_7:
     if (record->event.pressed) {
       SEND_STRING(SS_TAP(X_RIGHT_ALT) SS_DELAY(100) SS_TAP(X_RIGHT_ALT));
+    }
+    break;
+    case IN_STMT:
+    if (record->event.pressed) {
+      SEND_STRING("IN ('')" SS_DELAY(50) SS_TAP(X_LEFT) SS_DELAY(50) SS_TAP(X_LEFT));
+    }
+    break;
+    case LIKE_STMT:
+    if (record->event.pressed) {
+      SEND_STRING("LIKE '%%'" SS_DELAY(50) SS_TAP(X_LEFT) SS_DELAY(50) SS_TAP(X_LEFT));
     }
     break;
 
