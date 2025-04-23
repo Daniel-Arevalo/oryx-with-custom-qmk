@@ -156,42 +156,42 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case ST_MACRO_0:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_Y) SS_DELAY(100) SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_U));
+      SEND_STRING(SS_TAP(X_Y)SS_DELAY(100)  SS_TAP(X_O)SS_DELAY(100)  SS_TAP(X_U));
     }
     break;
     case ST_MACRO_1:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_Q) SS_DELAY(100) SS_TAP(X_U) SS_DELAY(100) SS_TAP(X_E) SS_DELAY(100) SS_TAP(X_U) SS_DELAY(100) SS_TAP(X_E));
+      SEND_STRING(SS_TAP(X_Q)SS_DELAY(100)  SS_TAP(X_U)SS_DELAY(100)  SS_TAP(X_E)SS_DELAY(100)  SS_TAP(X_U)SS_DELAY(100)  SS_TAP(X_E));
     }
     break;
     case ST_MACRO_2:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_L) SS_DELAY(100) SS_TAP(X_S) SS_DELAY(100) SS_TAP(X_SPACE) SS_DELAY(100) SS_TAP(X_MINUS) SS_DELAY(100) SS_TAP(X_L)  SS_DELAY(100) SS_TAP(X_ENTER));
+      SEND_STRING(SS_TAP(X_L)SS_DELAY(100)  SS_TAP(X_S)SS_DELAY(100)  SS_TAP(X_SPACE)SS_DELAY(100)  SS_TAP(X_MINUS)SS_DELAY(100)  SS_TAP(X_L)  SS_DELAY(100) SS_TAP(X_ENTER));
     }
     break;
     case ST_MACRO_3:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_3));
+      SEND_STRING(SS_TAP(X_SCRL)SS_DELAY(100)  SS_TAP(X_SCRL)SS_DELAY(100)  SS_TAP(X_3));
     }
     break;
     case ST_MACRO_4:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_4));
+      SEND_STRING(SS_TAP(X_SCRL)SS_DELAY(100)  SS_TAP(X_SCRL)SS_DELAY(100)  SS_TAP(X_4));
     }
     break;
     case ST_MACRO_5:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_1));
+      SEND_STRING(SS_TAP(X_SCRL)SS_DELAY(100)  SS_TAP(X_SCRL)SS_DELAY(100)  SS_TAP(X_1));
     }
     break;
     case ST_MACRO_6:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_2));
+      SEND_STRING(SS_TAP(X_SCRL)SS_DELAY(100)  SS_TAP(X_SCRL)SS_DELAY(100)  SS_TAP(X_2));
     }
     break;
     case ST_MACRO_7:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_RIGHT_ALT) SS_DELAY(100) SS_TAP(X_RIGHT_ALT));
+      SEND_STRING(SS_TAP(X_RIGHT_ALT)SS_DELAY(100)  SS_TAP(X_RIGHT_ALT));
     }
     break;
 
